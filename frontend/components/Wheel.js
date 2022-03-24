@@ -1,6 +1,10 @@
 import React from 'react'
+import * as actionCreators from '../state/action-creators'
+import { connect } from "react-redux"
 
 export default function Wheel(props) {
+  const { wheel, moveClockwise, moveCounterClockwise } = props 
+  
   return (
     <div id="wrapper">
       <div id="wheel">
@@ -18,3 +22,5 @@ export default function Wheel(props) {
     </div>
   )
 }
+
+

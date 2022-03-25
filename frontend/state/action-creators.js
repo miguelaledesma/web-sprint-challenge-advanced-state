@@ -18,9 +18,13 @@ export function setMessage() { }
 
 export function setQuiz() { }
 
-export function inputChange() { }
+export function inputChange(input) { 
+  return {type: type.INPUT_CHANGE, payload: input}
+}
 
-export function resetForm() { }
+export function resetForm() {
+  return {type: type.RESET_FORM}
+ }
 
 // ❗ Async action creators
 export function fetchQuiz() {

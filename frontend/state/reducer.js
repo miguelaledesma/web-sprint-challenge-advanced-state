@@ -2,26 +2,37 @@
 import { combineReducers } from 'redux'
 import * as type from "./action-types"
 
-const initialWheelState = 0
+const initialWheelState = { counter: 0 }; 
+
 function wheel(state = initialWheelState, action) {
   switch(action.type){
-    case type.MOVE_CLOCKWISE: 
-    if(state === 5){
-      
-      return state * 0
+    case type.MOVE_CLOCKWISE:
+      if (state.counter <= 4) {
+        return {
+          ...state,
+          counter: state.counter + 1,
+        };
+      } else {
+        return {
+          ...state,
+          counter: 0,
+        };
+      }
+    case type.MOVE_COUNTERCLOCKWISE : 
+    if (state.counter >= 1) {
+      return {
+        ...state,
+        counter: state.counter - 1,
+      };
     } else {
-      return state + 1
-    }
-    case type.MOVE_COUNTERCLOCKWISE: 
-    if(state === 0){
-      return state + 5
-    } else {
-      return state - 1
+      return {
+        ...state,
+        counter: 5,
+      };
     }
     default: 
-    return state 
+    return state; 
   }
- 
 }
 
 const initialQuizState = null

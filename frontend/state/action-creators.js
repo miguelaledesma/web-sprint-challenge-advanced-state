@@ -1,12 +1,16 @@
 // ❗ You don't need to add extra action creators to achieve MVP
 import * as type from './action-types'
-export const moveClockwise = () =>  {
-  return {type: type.MOVE_CLOCKWISE}
- }
+import axios from 'axios';
 
-export const moveCounterClockwise = () => { 
-  return {type: type.MOVE_COUNTERCLOCKWISE}
+
+export function moveClockwise(value) {
+  return { type: type.MOVE_CLOCKWISE, payload: value };
 }
+
+export function moveCounterClockwise() {
+  return { type: type.MOVE_COUNTERCLOCKWISE };
+}
+
 
 export function selectAnswer() { }
 

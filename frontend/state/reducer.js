@@ -5,7 +5,9 @@ import * as type from "./action-types"
 const initialWheelState = { counter: 0 }; 
 
 function wheel(state = initialWheelState, action) {
+
   switch(action.type){
+
     case type.MOVE_CLOCKWISE:
       if (state.counter <= 4) {
         return {
@@ -56,7 +58,12 @@ const initialFormState = {
   newFalseAnswer: '',
 }
 function form(state = initialFormState, action) {
-  return state
+  switch(action.type){
+    case type.INPUT_CHANGE:
+      return {}
+      case type.RESET_FORM: 
+      return {}
+  }
 }
 
 export default combineReducers({ wheel, quiz, selectedAnswer, infoMessage, form })

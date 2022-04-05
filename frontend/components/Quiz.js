@@ -35,7 +35,7 @@ export function Quiz(props) {
           <div id="quizAnswers">
             <div
               className={`${
-                props.selectedAnswer == quiz.answers[0].answer_id
+                props.selectedAnswer === quiz.answers[0].answer_id
                   ? "answer selected"
                   : "answer"
               }`}
@@ -49,7 +49,7 @@ export function Quiz(props) {
             </div>
             <div
               className={`${
-                props.selectedAnswer == quiz.answers[1].answer_id
+                props.selectedAnswer === quiz.answers[1].answer_id
                   ? "answer selected"
                   : "answer"
               }`}
